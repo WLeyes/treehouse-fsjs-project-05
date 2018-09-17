@@ -4,3 +4,20 @@
     justify-content: flex-start;
   }
 }
+
+@include media-query(medium) {
+  .header-inner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .header-text-container {
+    text-align: left;
+  }
+  .search-container {
+    margin-top: 25px;
+  }
+}

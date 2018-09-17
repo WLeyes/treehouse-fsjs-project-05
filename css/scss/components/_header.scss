@@ -4,4 +4,16 @@ header {
     max-width: 1180px;
     margin: auto;
   }
+  @include media-query(medium) {
+    header {
+      &-inner-container {
+        justify-content: space-between;
+        padding-right: 25px;
+        padding-left: 25px;
+      }
+      &-text-container {
+        text-align: left;
+      }
+    }
+  }
 }

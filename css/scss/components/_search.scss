@@ -1,29 +1,38 @@
 .search-input {
-  padding: 0.4rem 1rem;
-  border: 1px solid rgba(200, 200, 200, 0.9);
-  border-radius: 0.25rem 0 0 0.25rem;
+  padding: 5px;
+  border: 1px solid $silver-chalace;
+  border-radius: $border-radius--default;
   max-width: 20rem;
   transition: .4s ease-out;
   outline: none;
-  :active,
-  :hover,
-  :focus {
-    border: 1px solid rgba(50, 50, 50, 0.9);
+  &:active,
+  &:hover,
+  &:focus {
+    border: 1px solid $color--accent;
   }
 }
 
 .search-submit {
   cursor: pointer;
-  height: 33px;
+  height: 30px;
+  padding: 5px;
   background: rgba(245, 245, 245, 0.9);
-  border-radius: 0 0.25rem 0.25rem 0;
-  border: 1px solid rgba(200, 200, 200, 0.9);
+  border-radius: $border-radius--default;
+  border: 1px solid $silver-chalace;
   transition: .4s ease-out;
   outline: none;
-  :active,
-  :hover,
-  :focus {
+  &:active,
+  &:hover,
+  &:focus {
     background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(50, 50, 50, 0.9);
+    border: 1px solid $color--accent;
   }
+}
+
+form {
+  -webkit-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  border-radius: $border-radius--default;
 }

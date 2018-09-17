@@ -5,7 +5,11 @@ body {
 }
 
 header h1 {
-  font-size: 1.25em;
-  color: rgba(50, 50, 50, 0.9);
-  margin-top: 35px;
+  font-family: $font-family--primary;
+  color: $color--primary;
+  padding: 10px;
+  -webkit-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.75);
+  border-radius: $border-radius--default;
 }

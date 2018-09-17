@@ -2,12 +2,12 @@
 // scss/utilities/_config.scss :  Global variables for fonts, breakpoints, colors
 /////////////////////////////////////////////////////////////////////////////////
 // Font Stacks
-$font-url--google: 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+$font-url--google: 'https://fonts.googleapis.com/css?family=Permanent+Marker';
 $font-family--sans-serif: Helvetica,
 Arial,
 sans-serif;
-$font-family--primary: 'Lato',
-'Helvetica Neue',
+$font-family--primary: 'Permanent Marker',
+cursive,
 $font-family--sans-serif;
 $font-family--secondary: 'Helvetica Neue',
 $font-family--sans-serif;
@@ -39,8 +39,8 @@ $vista-blue: #88d9a0;
 $sea-pink: #ec9fa3;
 $vivid-tangerine: #fd9f85;
 // Color usage
-$color--primary: $coral;
-$color--secondary: $viking;
+$color--primary: $sunglo;
+$color--secondary: $malibu;
 $color--accent: $emerald;
 $color--shadow: rgba($black, .2);
 ////////////////////////////////////////////////////////////////////////////////
