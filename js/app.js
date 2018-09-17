@@ -76,10 +76,9 @@ const UICtrl = (() => {
       // Modal output
       const container = document.createElement('div');
       const contents = document.createElement('div');
-      container.className = UISelectors.modalContainer;
+      container.className = 'modal-container';
       contents.className = UISelectors.modal;
       container.innerHTML = `
-        <div class="modal-container">
         <div class="modal">
           <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
           <div class="modal-info-container">
@@ -96,7 +95,6 @@ const UICtrl = (() => {
             <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
             <button type="button" id="modal-next" class="modal-next btn">Next</button>
           </div>
-        </div>
       `;
 
       // if overlay is active remove
@@ -123,6 +121,24 @@ const UICtrl = (() => {
         event.preventDefault();
         document.querySelector(UISelectors.modalContainer).remove();
       });
+
+      // Modal next button (keypress)
+      document.querySelector('body').addEventListener('keyup', event => {
+        event.preventDefault();
+        console.log(event);
+        if(event.key === 'ArrowRight'){
+          UICtrl.modalNext(data, index); 
+        }
+        if(event.key === 'ArrowLeft'){
+          UICtrl.modalPrev(data, index); 
+        }
+        if(event.key === 'Escape' || event.key === 'Enter' ){
+          if(document.querySelector(UISelectors.modalContainer)){
+            document.querySelector(UISelectors.modalContainer).remove();
+          }
+        }
+      });
+      
     },
 
     // Next user record (loops back to begining)
@@ -155,6 +171,7 @@ const UICtrl = (() => {
       container.innerHTML = output;
       document.querySelector(UISelectors.searchInput).addEventListener('keyup', event => {
         event.preventDefault();
+        console.log(event);
         UICtrl.searchFilter();
       });
       // triggers the search as the paste option on context is way below header
@@ -219,9 +236,7 @@ const DataCtrl = (() => {
 
 // App Controller
 const App = ((UICtrl, DataCtrl) => {
-  // Get UI selectors 
-  const UISelectors = UICtrl.getSelectors();
-  
+
   // Public
   return {
     init: () => {
