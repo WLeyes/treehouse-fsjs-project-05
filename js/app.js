@@ -122,22 +122,22 @@ const UICtrl = (() => {
         document.querySelector(UISelectors.modalContainer).remove();
       });
 
-      // Modal next button (keypress)
-      document.querySelector('body').addEventListener('keyup', event => {
-        event.preventDefault();
-        console.log(event);
-        if(event.key === 'ArrowRight'){
-          UICtrl.modalNext(data, index); 
-        }
-        if(event.key === 'ArrowLeft'){
-          UICtrl.modalPrev(data, index); 
-        }
-        if(event.key === 'Escape' || event.key === 'Enter' ){
-          if(document.querySelector(UISelectors.modalContainer)){
-            document.querySelector(UISelectors.modalContainer).remove();
-          }
-        }
-      });
+      // Modal next button (keypress) to revisit down the road - current issue is the event doubles on each click
+      // document.querySelector('body').addEventListener('keyup', event => {
+      //   event.preventDefault();
+      //   console.log(event);
+      //   if(event.key === 'ArrowRight'){
+      //     UICtrl.modalNext(data, index); 
+      //   }
+      //   if(event.key === 'ArrowLeft'){
+      //     UICtrl.modalPrev(data, index); 
+      //   }
+      //   if(event.key === 'Escape' || event.key === 'Enter' ){
+      //     if(document.querySelector(UISelectors.modalContainer)){
+      //       document.querySelector(UISelectors.modalContainer).remove();
+      //     }
+      //   }
+      // });
       
     },
 

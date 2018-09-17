@@ -1,0 +1,110 @@
+/* ===================================== 
+   Modal
+======================================== */
+
+.modal {
+  position: relative;
+  width: 95%;
+  max-width: 420px;
+  min-height: 415px;
+  margin: 10px auto auto;
+  padding-bottom: 15px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0.25em;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  transition: .4s ease-out;
+  &-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.8);
+    outline: none;
+    border-radius: 0.25em;
+    border: 1px solid rgba(50, 50, 50, 0.3);
+  }
+  &-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &-img {
+    width: 150px;
+    margin-top: 35px;
+    border-radius: 50%;
+  }
+  &-name {
+    margin-bottom: 5px;
+  }
+  &-text {
+    color: rgba(50, 50, 50, 0.7);
+    margin: 10px;
+  }
+  &-info-container {
+    text-transform: capitalize;
+  }
+  &-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 95%;
+    max-width: 420px;
+    padding: 10px 15px 15px;
+    margin: 10px auto auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0.25em;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    & .btn {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      padding: 0.75em 1.5em;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 0.35em;
+      transition: .4s ease-out;
+      outline: none;
+    }
+  }
+  hr {
+    width: 75%;
+    margin: 25px auto 30px;
+    border-color: rgba(200, 200, 200, 0.2);
+  }
+  @media (min-width: 768px) {
+    & {
+      margin-top: 100px;
+    }
+  }
+}
+
+/* ===================================== 
+   Media Queries
+======================================== */
+
+/* ===================================== 
+   Tablet
+======================================== */
+
+@media (min-width: 768px) {
+  .header-inner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .header-text-container {
+    text-align: left;
+  }
+  .search-container {
+    margin-top: 25px;
+  }
+}

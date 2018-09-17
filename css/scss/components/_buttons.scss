@@ -1,0 +1,6 @@
+@include media-query(medium) {
+  .btn:hover {
+    background: $color--primary;
+    color: $color--secondary;
+  }
+}

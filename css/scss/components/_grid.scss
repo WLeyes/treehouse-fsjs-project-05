@@ -1,0 +1,6 @@
+.card {
+  @include flex(row) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
