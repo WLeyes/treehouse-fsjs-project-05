@@ -10,9 +10,12 @@ const UICtrl = (() => {
     cardName:          '.card-name',
     name:              '#id',
     modalContainer:    '.modal-container',
-    modal:             '.modal'
+    modal:             '.modal',
+    modalNext:         '#modal-next',
+    modalPrev:         '#modal-prev',
+    modalClose:        '#modal-close-btn'
   }
-  let current = [];
+
   // public
   return {
     
@@ -49,17 +52,13 @@ const UICtrl = (() => {
       details.forEach( (card, index) => {
         card.addEventListener('click', event => {
           event.preventDefault();
-          console.log(index);
           UICtrl.modal(data, index);
         });
       });
     },
 
     modal: (data, index) => {
-      console.log(data);
-      
       let user = data.results[index];
-      console.log(user);
       let firstName = user.name.first;
       let lastName = user.name.last;
       let image = user.picture.large;
@@ -96,7 +95,46 @@ const UICtrl = (() => {
           </div>
         </div>
       `;
+      // if overlay is active remove
+      if(document.querySelector(UISelectors.modalContainer)){
+        document.querySelector(UISelectors.modalContainer).remove();
+      }
+      // append overlay
       document.querySelector('body').appendChild(container);
+
+      // Modal next button
+      document.querySelector(UISelectors.modalNext).addEventListener('click', event => {
+        event.preventDefault();
+        UICtrl.modalNext(data, index);
+      });
+      
+      // Modal previous button
+      document.querySelector(UISelectors.modalPrev).addEventListener('click', event => {
+        event.preventDefault();
+        UICtrl.modalPrev(data, index);
+      });
+
+      // Modal close button
+      document.querySelector(UISelectors.modalClose).addEventListener('click', event => {
+        event.preventDefault();
+        document.querySelector(UISelectors.modalContainer).remove();
+      });
+    },
+
+    modalNext: (data, index) =>{
+      index++;
+      if(index > document.querySelectorAll(UISelectors.card).length - 1){
+        index = 0;
+      }
+      UICtrl.modal(data, index);
+    },
+
+    modalPrev: (data, index) =>{
+      index--;
+      if(index < 0){
+        index = document.querySelectorAll(UISelectors.card).length -1;
+      }
+      UICtrl.modal(data, index);
     },
 
     autocomplete: (data) => {
@@ -106,6 +144,8 @@ const UICtrl = (() => {
     getSelectors: () => UISelectors
   }
 })();
+
+
 
 // Data Controller
 const DataCtrl = (() => {
@@ -124,6 +164,7 @@ const DataCtrl = (() => {
 })();
 
 
+
 // App Controller
 const App = ((UICtrl, DataCtrl) => {
   // Get UI selectors 
@@ -137,6 +178,7 @@ const App = ((UICtrl, DataCtrl) => {
     }
   }
 })(UICtrl, DataCtrl);
+
 
 
 // Initialize App
