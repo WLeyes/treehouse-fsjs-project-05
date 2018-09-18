@@ -541,6 +541,9 @@ header h1 {
   box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.75);
   border-radius: 0.4em; }
 
+h3 {
+  color: #e4757a; }
+
 .card {
   display: flex;
   flex-direction: row;
