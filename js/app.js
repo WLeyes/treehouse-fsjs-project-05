@@ -88,7 +88,7 @@ const UICtrl = (() => {
             <p class="modal-text cap">${city}</p>
             <hr>
             <p class="modal-text">${phone}</p>
-            <p class="modal-text">${street}., ${city}, ${state} ${zip}</p>
+            <p class="modal-text">${street}., ${city}, ${abbrvState(state)} ${zip}</p>
             <p class="modal-text">Birthday: ${birthday}</p>
           </div>
           <div class="modal-btn-container">
