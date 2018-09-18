@@ -55,10 +55,8 @@ const states = [
 console.log(states[0].state)
 
 abbrvState = state => {
-  console.log(state)
   for(key of states){
     if(key.state.toLowerCase() === state.toLowerCase()){
-      console.log(key.abbrv);
       return key.abbrv;
     }
   }
