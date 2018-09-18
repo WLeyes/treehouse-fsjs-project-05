@@ -30,7 +30,6 @@ const UICtrl = (() => {
         let image = user.picture.large;
         let email = user.email;
         let city = user.location.city;
-        let state = user.location.state;
         // define the output for each card
         let employee = `
           <div class="card-img-container">
@@ -39,7 +38,7 @@ const UICtrl = (() => {
           <div class="card-info-container">
             <h3 id="name" class="card-name cap">${firstName} ${lastName}</h3>
             <p class="card-text">${email}</p>
-            <p class="card-text cap">${city}, ${state}</p>
+            <p class="card-text cap">${city}</p>
           </div>
         `;
         // create outer div of the cards 
@@ -87,7 +86,7 @@ const UICtrl = (() => {
             <p class="modal-text">${email}</p>
             <p class="modal-text cap">${city}</p>
             <hr>
-            <p class="modal-text">${phone}</p>
+            <p class="modal-text">${phone.replace('-', ' ')}</p>
             <p class="modal-text">${street}., ${city}, ${abbrvState(state)} ${zip}</p>
             <p class="modal-text">Birthday: ${birthday}</p>
           </div>
