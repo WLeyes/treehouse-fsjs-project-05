@@ -65,7 +65,7 @@ const UICtrl = (() => {
       let lastName = user.name.last;
       let image = user.picture.large;
       let email = user.email;
-      let birthday = new Date(user.dob.date).toLocaleDateString();
+      let birthday = new Date(user.dob.date).toLocaleDateString('en-US');
       let city = user.location.city;
       let street = user.location.street;
       let state = user.location.state;
