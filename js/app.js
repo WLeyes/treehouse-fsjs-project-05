@@ -219,7 +219,7 @@ const UICtrl = (() => {
 const DataCtrl = (() => {
   // Data Fetch API
   function fetchUserJSON(url, numberOfUsers) {
-    fetch(`${url}?seed=b73e4d2e35f01cdc&nat=us&results=${parseInt(numberOfUsers)}`)
+    fetch(`${url}?nat=us&results=${parseInt(numberOfUsers)}`)
       .then( response => response.json() )
       .then( data => UICtrl.card(data) )
       .catch( error => console.log(error) );
